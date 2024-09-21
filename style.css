@@ -1,0 +1,240 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght,YOPQ@100..900,116&display=swap");
+
+:root {
+	/* Primary colors  */
+	--Orange: hsl(26, 100%, 55%);
+	--Pale-orange: hsl(25, 100%, 94%);
+
+	/* Neutral colors  */
+	--Very-dark-blue: hsl(220, 13%, 13%);
+	--Dark-grayish-blue: hsl(219, 9%, 45%);
+	--Grayish-blue: hsl(220, 14%, 75%);
+	--Light-grayish-blue: hsl(223, 64%, 98%);
+	--White: hsl(0, 0%, 100%);
+	--Black: hsl(0, 0%, 0%);
+}
+
+body {
+	font-family: "Kumbh Sans", sans-serif;
+}
+
+.navbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1rem 2rem;
+	background-color: var(--White);
+	position: relative;
+}
+
+.nav-left {
+	display: flex;
+	align-items: center;
+}
+.nav-left .logo {
+	margin-bottom: 4px;
+	width: 25vw;
+}
+.nav-right {
+	display: flex;
+	align-items: center;
+}
+
+.hamburger {
+	cursor: pointer;
+	padding-right: 20px;
+}
+
+.cart-icon {
+	font-size: 1.5rem;
+	margin-right: 1rem;
+}
+
+.profile-pic {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+}
+
+/* Menu that shows on mobile */
+.nav-menu {
+	position: fixed;
+	top: 0;
+	left: -100%;
+	width: 70%;
+	height: 100%;
+	background-color: white;
+	padding: 2rem;
+	/* box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5); */
+	z-index: 1001;
+	transition: left 0.3s ease, visibility 0.3s ease; /* Smooth transition */
+	visibility: hidden; /* Hidden by default */
+	opacity: 0; /* Fully transparent */
+}
+
+.nav-menu.active {
+	left: 0; /* Move into view */
+	visibility: visible; /* Make visible */
+	opacity: 1; /* Fully opaque */
+}
+
+.nav-links {
+	list-style: none;
+	padding: 0;
+	margin-top: 3rem;
+}
+
+.nav-links li {
+	margin-bottom: 1.2rem;
+}
+
+.nav-links li a {
+	text-decoration: none;
+	color: black;
+	font-weight: 700;
+	font-size: 1rem;
+}
+
+.close-icon {
+	font-size: 2rem;
+	cursor: pointer;
+	position: absolute;
+	top: 2rem;
+	left: 2rem;
+}
+
+/* Backdrop overlay for 30% */
+.overlay {
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: 30%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.4);
+	backdrop-filter: blur(2px);
+	z-index: 1000;
+	visibility: hidden;
+	opacity: 0;
+	transition: visibility 0s 0.3s ease, opacity 0.3s ease; /* Delay visibility change */
+}
+
+.overlay.active {
+	visibility: visible; /* Make visible */
+	opacity: 1; /* Fully opaque */
+	transition-delay: 0s; /* Reset delay */
+}
+
+
+/* product section  */
+.slider-container {
+    max-width: 600px;
+    margin: auto;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.slider {
+    position: relative;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+.slider-controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.slider-controls button {
+    background: none;
+    border: none;
+    font-size: 30px;
+    color: black;
+    cursor: pointer;
+}
+
+.description {
+    padding: 20px;
+}
+
+.company-name {
+    color: gray;
+}
+
+.product-title {
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+.product-description {
+    color: gray;
+    margin-bottom: 20px;
+}
+
+.pricing {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.price {
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+    margin-right: 10px;
+}
+
+.offer {
+    background: black;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    margin-right: 10px;
+}
+
+.previous-price {
+    color: gray;
+    text-decoration: line-through;
+}
+
+.quantity-control {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.quantity-btn {
+    background: none;
+    border: 1px solid black;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.quantity {
+    margin: 0 10px;
+    font-size: 18px;
+}
+
+.add-to-cart {
+    background-color: orange;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.cart-icon {
+    margin-left: 10px;
+}
