@@ -3,7 +3,13 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+			integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
 		<link
 			rel="icon"
 			type="image/png"
@@ -45,8 +51,12 @@
 			<div class="slider">
 				<img id="slider-image" src="images/image-product-1.jpg" alt="Sneaker" />
 				<div class="slider-controls">
-					<button class="prev" onclick="changeImage(-1)">&#10094;</button>
-					<button class="next" onclick="changeImage(1)">&#10095;</button>
+					<button class="prev" onclick="changeImage(-1)">
+						<img src="images/icon-previous.svg" alt="" />
+					</button>
+					<button class="next" onclick="changeImage(1)">
+						<img src="images/icon-next.svg" alt="" />
+					</button>
 				</div>
 			</div>
 			<div class="description">
@@ -58,17 +68,23 @@
 					the weather can offer.
 				</p>
 				<div class="pricing">
-					<span class="price">$125.00</span>
-					<span class="offer">50%</span>
+					<div class="price">
+						<span class="current-price">$125.00</span>
+						<span class="offer">50%</span>
+					</div>
 					<span class="previous-price">$250.00</span>
 				</div>
 				<div class="quantity-control">
-					<button class="quantity-btn">-</button>
+					<button class="quantity-btn">
+						<img src="images/icon-minus.svg" alt="" />
+					</button>
 					<span class="quantity">0</span>
-					<button class="quantity-btn">+</button>
+					<button class="quantity-btn">
+						<img src="images/icon-plus.svg" alt="" />
+					</button>
 				</div>
 				<button class="add-to-cart">
-					Add to cart <i class="cart-icon">🛒</i>
+					<i class="fa-solid fa-cart-shopping cart-icon"></i>Add to cart
 				</button>
 			</div>
 		</div>

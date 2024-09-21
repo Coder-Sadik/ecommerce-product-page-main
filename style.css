@@ -33,7 +33,6 @@ body {
 }
 .nav-left .logo {
 	margin-bottom: 4px;
-	width: 25vw;
 }
 .nav-right {
 	display: flex;
@@ -51,8 +50,8 @@ body {
 }
 
 .profile-pic {
-	width: 40px;
-	height: 40px;
+	width: 30px;
+	height: 30px;
 	border-radius: 50%;
 }
 
@@ -107,8 +106,8 @@ body {
 .overlay {
 	position: fixed;
 	top: 0;
-	right: 0;
-	width: 30%;
+	right: -5%;
+	width: 35%;
 	height: 100%;
 	background-color: rgba(0, 0, 0, 0.4);
 	backdrop-filter: blur(2px);
@@ -121,120 +120,149 @@ body {
 .overlay.active {
 	visibility: visible; /* Make visible */
 	opacity: 1; /* Fully opaque */
-	transition-delay: 0s; /* Reset delay */
+	transition-delay: 0.2s; /* Reset delay */
 }
-
 
 /* product section  */
 .slider-container {
-    max-width: 600px;
-    margin: auto;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
+	max-width: 600px;
+	margin: auto;
+	background: white;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+	overflow: hidden;
+	margin-bottom: 100px;
 }
 
 .slider {
-    position: relative;
+	position: relative;
 }
 
 img {
-    width: 100%;
-    height: auto;
+	width: 100%;
+	height: auto;
 }
 
 .slider-controls {
-    position: absolute;
-    top: 50%;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    transform: translateY(-50%);
+	position: absolute;
+	top: 50%;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	transform: translateY(-50%);
 }
 
 .slider-controls button {
-    background: none;
-    border: none;
-    font-size: 30px;
-    color: black;
-    cursor: pointer;
+	background-color: white;
+	margin: 0px 10px;
+	padding: 10px 13px;
+	border: none;
+	border-radius: 50%;
+	font-size: 30px;
+	color: black;
+	cursor: pointer;
 }
 
 .description {
-    padding: 20px;
+	padding: 20px;
 }
 
 .company-name {
-    color: gray;
+	color: var(--Dark-grayish-blue);
+	font-weight: 700;
+	font-size: 0.9rem;
+	letter-spacing: 2px;
 }
 
 .product-title {
-    margin: 10px 0;
-    font-weight: bold;
+	margin: 10px 0;
+	font-weight: 700;
+	font-size: 2.5rem;
+	line-height: 3rem;
 }
 
 .product-description {
-    color: gray;
-    margin-bottom: 20px;
+	color: var(--Dark-grayish-blue);
+	margin-bottom: 20px;
+	font-weight: 500;
+	font-size: 1.2rem;
 }
 
 .pricing {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 20px;
 }
 
 .price {
-    font-size: 24px;
-    font-weight: bold;
-    color: black;
-    margin-right: 10px;
+	color: var(--Very-dark-blue);
+	display: flex;
+	align-items: center;
 }
-
+.current-price {
+	font-weight: 700;
+	font-size: 2.5rem;
+	margin-right: 15px;
+}
 .offer {
-    background: black;
-    color: white;
-    padding: 5px 10px;
-    border-radius: 20px;
-    margin-right: 10px;
+	background: var(--Very-dark-blue);
+	color: white;
+	padding: 5px 10px;
+	border-radius: 10px;
+	margin-right: 10px;
 }
 
 .previous-price {
-    color: gray;
-    text-decoration: line-through;
+	color: var(--Dark-grayish-blue);
+	font-weight: 700;
+	font-size: 1.3rem;
+	text-decoration: line-through;
 }
 
 .quantity-control {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 20px;
 }
 
 .quantity-btn {
-    background: none;
-    border: 1px solid black;
-    padding: 10px;
-    cursor: pointer;
+	background: none;
+	border: none;
+	padding: 10px;
+	cursor: pointer;
+	margin: 0 15px;
 }
 
 .quantity {
-    margin: 0 10px;
-    font-size: 18px;
+	margin: 0 10px;
+	font-weight: 700;
+	font-size: 1.5rem;
 }
 
 .add-to-cart {
-    background-color: orange;
-    color: white;
-    border: none;
-    border-radius: 20px;
-    padding: 10px 20px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
+	background-color: var(--Orange);
+	color: var(--Black);
+	border: none;
+	border-radius: 10px;
+	width: 100%;
+	padding: 20px 20px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: 700;
+	font-size: 1.3rem;
+}
+.add-to-cart:hover {
+	color: white;
+}
+.cart-icon {
+	margin-right: 20px;
 }
 
-.cart-icon {
-    margin-left: 10px;
+@media screen and (min-width:768px) {
+	.hamburger {
+		display: none;
+	}
 }
