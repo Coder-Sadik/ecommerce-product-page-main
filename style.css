@@ -266,6 +266,9 @@ img {
 		margin: 0 auto;
 		border-bottom: 2px solid rgba(204, 201, 201, 0.671);
 		padding: 1rem 0;
+		position: sticky;
+		top: 0;
+		z-index: 999;
 	}
 	.hamburger {
 		display: none;
@@ -309,7 +312,7 @@ img {
 		transform: translateX(-50%);
 	}
 	.nav-links li a:hover::after,
-	.nav-links.active li a:hover::after {
+	.nav-links li.active a::after {
 		width: 100%;
 		left: 50%;
 		transform: translateX(-50%);

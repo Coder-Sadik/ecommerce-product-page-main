@@ -2,6 +2,18 @@ const hamburger = document.getElementById("hamburger");
 const navMenu = document.getElementById("nav-menu");
 const closeIcon = document.getElementById("close-icon");
 const overlay = document.getElementById("overlay");
+const navLinks = document.querySelectorAll(".nav-link");
+
+//Function for selecting the active nav link
+navLinks.forEach((navLink) => {
+	navLink.addEventListener("click", () => {
+		console.log(navLink);
+		navLinks.forEach((navLink) => {
+			navLink.classList.remove("active");
+		});
+		navLink.classList.add("active");
+	});
+});
 
 // Function to toggle the nav menu
 const toggleMenu = () => {
