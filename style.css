@@ -3,7 +3,7 @@
 :root {
 	/* Primary colors  */
 	--Orange: hsl(26, 100%, 55%);
-	--Pale-orange: hsl(25, 100%, 94%);
+	--Pale-orange: hsl(26, 100%, 75%);
 
 	/* Neutral colors  */
 	--Very-dark-blue: hsl(220, 13%, 13%);
@@ -45,8 +45,8 @@ body {
 }
 
 .cart-icon {
-	font-size: 1.5rem;
-	margin-right: 1rem;
+	margin-right: 70px;
+	cursor: pointer;
 }
 
 .profile-pic {
@@ -127,7 +127,7 @@ body {
 	max-width: 600px;
 	margin: auto;
 	background: white;
-	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+	/* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); */
 	overflow: hidden;
 	margin-bottom: 100px;
 }
@@ -135,11 +135,14 @@ body {
 .slider {
 	position: relative;
 }
+.slider .thumbnails {
+	display: none;
+}
 
-img {
+/* img {
 	width: 100%;
 	height: auto;
-}
+} */
 
 .slider-controls {
 	position: absolute;
@@ -223,6 +226,9 @@ img {
 	align-items: center;
 	justify-content: space-between;
 	margin-bottom: 20px;
+	padding: 20px;
+	background-color: var(--Light-grayish-blue);
+	border-radius: 10px;
 }
 
 .quantity-btn {
@@ -231,6 +237,9 @@ img {
 	padding: 10px;
 	cursor: pointer;
 	margin: 0 15px;
+}
+.quantity-btn img {
+	min-width: 15px;
 }
 
 .quantity {
@@ -251,18 +260,19 @@ img {
 	align-items: center;
 	justify-content: center;
 	font-weight: 700;
-	font-size: 1.3rem;
+	font-size: 1.2rem;
+	white-space: nowrap;
 }
 .add-to-cart:hover {
-	color: white;
+	background-color: var(--Pale-orange);
 }
 .cart-icon {
 	margin-right: 20px;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px) {
 	.navbar {
-		width: 80%;
+		max-width: 80%;
 		margin: 0 auto;
 		border-bottom: 2px solid rgba(204, 201, 201, 0.671);
 		padding: 1rem 0;
@@ -276,7 +286,9 @@ img {
 	.close-icon {
 		display: none;
 	}
-
+	.overlay {
+		display: none;
+	}
 	.nav-right {
 		order: 3;
 	}
@@ -293,18 +305,19 @@ img {
 		margin: 0;
 	}
 	.nav-links li {
-		margin: 20px;
+		margin: 20px 3%;
 	}
 	.nav-links li a {
 		color: var(--Dark-grayish-blue);
 		font-weight: 500;
 		position: relative;
+		padding: 20px 0px;
 	}
 	.nav-links li a::after {
 		content: "";
 		position: absolute;
 		left: 50%;
-		bottom: -40px;
+		bottom: -20px;
 		height: 3px;
 		width: 0;
 		background-color: var(--Orange);
@@ -323,6 +336,59 @@ img {
 	}
 
 	.slider-container {
-		margin-top: 80px;
+		margin: 4% auto;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 4%;
+		max-width: 80%;
+	}
+	.slider-container > * {
+		flex: 1;
+	}
+
+	.pricing {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+	}
+	.buttons {
+		display: flex;
+		justify-content: space-between;
+		gap: 20px;
+	}
+	.quantity-control {
+		margin: 0;
+		flex: 1;
+	}
+	.add-to-cart {
+		flex: 2;
+	}
+	.slider-controls {
+		display: none;
+	}
+	.slider img:nth-last-of-type(1) {
+		border-radius: 10px;
+	}
+	.slider .thumbnails {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 10px;
+		margin-top: 20px;
+	}
+	.thumbnails img {
+		max-width: 80px;
+		border-radius: 10px;
+		cursor: pointer;
+	}
+	.thumbnails img:hover {
+		border: 3px solid var(--Orange);
+	}
+}
+
+@media screen and (min-width:1280px) {
+	.slider-container{
+		max-width: 60%;
 	}
 }

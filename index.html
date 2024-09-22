@@ -51,12 +51,18 @@
 			<div class="slider">
 				<img id="slider-image" src="images/image-product-1.jpg" alt="Sneaker" />
 				<div class="slider-controls">
-					<button class="prev" onclick="changeImage(-1)">
+					<button class="prev">
 						<img src="images/icon-previous.svg" alt="" />
 					</button>
-					<button class="next" onclick="changeImage(1)">
+					<button class="next">
 						<img src="images/icon-next.svg" alt="" />
 					</button>
+				</div>
+				<div class="thumbnails">
+					<img src="images/image-product-1-thumbnail.jpg" alt="thumbnail of product-1">
+					<img src="images/image-product-2-thumbnail.jpg" alt="thumbnail of product-2">
+					<img src="images/image-product-3-thumbnail.jpg" alt="thumbnail of product-3">
+					<img src="images/image-product-4-thumbnail.jpg" alt="thumbnail of product-4">
 				</div>
 			</div>
 			<div class="description">
@@ -74,18 +80,20 @@
 					</div>
 					<span class="previous-price">$250.00</span>
 				</div>
-				<div class="quantity-control">
-					<button class="quantity-btn">
-						<img src="images/icon-minus.svg" alt="" />
-					</button>
-					<span class="quantity">0</span>
-					<button class="quantity-btn">
-						<img src="images/icon-plus.svg" alt="" />
+				<div class="buttons">
+					<div class="quantity-control">
+						<button class="quantity-btn">
+							<img src="images/icon-minus.svg" alt="" />
+						</button>
+						<span class="quantity">0</span>
+						<button class="quantity-btn">
+							<img src="images/icon-plus.svg" alt="" />
+						</button>
+					</div>
+					<button class="add-to-cart">
+						<i class="fa-solid fa-cart-shopping cart-icon"></i>Add to cart
 					</button>
 				</div>
-				<button class="add-to-cart">
-					<i class="fa-solid fa-cart-shopping cart-icon"></i>Add to cart
-				</button>
 			</div>
 		</div>
 		<script src="script.js"></script>
