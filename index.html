@@ -51,18 +51,34 @@
 			<div class="slider">
 				<img id="slider-image" src="images/image-product-1.jpg" alt="Sneaker" />
 				<div class="slider-controls">
-					<button class="prev">
+					<button class="prev" onclick="updateIndex(-1)">
 						<img src="images/icon-previous.svg" alt="" />
 					</button>
-					<button class="next">
+					<button class="next" onclick="updateIndex(1)">
 						<img src="images/icon-next.svg" alt="" />
 					</button>
 				</div>
 				<div class="thumbnails">
-					<img src="images/image-product-1-thumbnail.jpg" alt="thumbnail of product-1">
-					<img src="images/image-product-2-thumbnail.jpg" alt="thumbnail of product-2">
-					<img src="images/image-product-3-thumbnail.jpg" alt="thumbnail of product-3">
-					<img src="images/image-product-4-thumbnail.jpg" alt="thumbnail of product-4">
+					<img
+						src="images/image-product-1-thumbnail.jpg"
+						alt="thumbnail of product-1"
+						onclick="updateImage(0)"
+					/>
+					<img
+						src="images/image-product-2-thumbnail.jpg"
+						alt="thumbnail of product-2"
+						onclick="updateImage(1)"
+					/>
+					<img
+						src="images/image-product-3-thumbnail.jpg"
+						alt="thumbnail of product-3"
+						onclick="updateImage(2)"
+					/>
+					<img
+						src="images/image-product-4-thumbnail.jpg"
+						alt="thumbnail of product-4"
+						onclick="updateImage(3)"
+					/>
 				</div>
 			</div>
 			<div class="description">
@@ -82,11 +98,11 @@
 				</div>
 				<div class="buttons">
 					<div class="quantity-control">
-						<button class="quantity-btn">
+						<button class="quantity-btn" onclick="quantityControl(-1)">
 							<img src="images/icon-minus.svg" alt="" />
 						</button>
-						<span class="quantity">0</span>
-						<button class="quantity-btn">
+						<span id="quantity">0</span>
+						<button class="quantity-btn" onclick="quantityControl(1)">
 							<img src="images/icon-plus.svg" alt="" />
 						</button>
 					</div>
