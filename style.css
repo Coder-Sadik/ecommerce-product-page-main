@@ -55,6 +55,9 @@ body {
 	width: 30px;
 	height: 30px;
 	border-radius: 50%;
+	cursor: pointer;
+	display: inline-block;
+	margin-left: 20px;
 }
 .profile-pic:hover {
 	border: 2px solid var(--Orange);
@@ -390,7 +393,8 @@ body {
 		border-radius: 10px;
 		cursor: pointer;
 	}
-	.thumbnails img:hover {
+	.thumbnails img:hover,
+	.thumbnails img.active {
 		border: 3px solid var(--Orange);
 	}
 }

@@ -7,7 +7,6 @@ const navLinks = document.querySelectorAll(".nav-link");
 //Function for selecting the active nav link
 navLinks.forEach((navLink) => {
 	navLink.addEventListener("click", () => {
-		console.log(navLink);
 		navLinks.forEach((navLink) => {
 			navLink.classList.remove("active");
 		});
@@ -36,7 +35,7 @@ const quantityControl = (n) => {
 	quantity >= 0 ? (setQuantity.innerText = quantity) : (quantity = 0);
 };
 
-//carousel
+// image names for carousel
 let images = [
 	"image-product-1.jpg",
 	"image-product-2.jpg",
@@ -44,6 +43,7 @@ let images = [
 	"image-product-4.jpg",
 ];
 const maxLength = images.length;
+
 const sliderImage = document.getElementById("slider-image");
 
 //update image of carousel
@@ -57,3 +57,19 @@ const updateIndex = (n) => {
 	currentIndex = (currentIndex + maxLength + n) % maxLength;
 	updateImage(currentIndex);
 };
+
+//for active class in thumbnails
+const thumbnails = document.querySelectorAll(".thumbnail");
+console.log(thumbnails);
+
+thumbnails.forEach((thumbnail, index) => {
+	thumbnail.addEventListener("click", () => {
+		thumbnails.forEach((thumbnail) => {
+			thumbnail.classList.remove("active");
+		});
+		thumbnail.classList.add("active");
+		updateImage(index);
+	});
+});
+
+//add to cart functionality 
