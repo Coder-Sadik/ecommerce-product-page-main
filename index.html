@@ -29,7 +29,31 @@
 				<div class="logo"><img src="images/logo.svg" alt="" /></div>
 			</div>
 			<div class="nav-right">
-				<div class="cart-icon"><img src="images/icon-cart.svg" alt="" /></div>
+				<div class="cart-icon active">
+					<img src="images/icon-cart.svg" alt="" id="cart"/>
+					<!-- cart section  -->
+					<div class="cart-container">
+						<div class="cart-title">Cart</div>
+						<div class="product-list">
+							<div class="product">
+								<img
+									src="images/image-product-1-thumbnail.jpg"
+									alt="image-product-1-thumbnail"
+								/>
+								<div class="details">
+									<div class="product-name">
+										<p>Fall Limited Edition Sneakers</p>
+										<p id="calculation">$125</p>
+									</div>
+								</div>
+								<div id="delete-icon">
+									<img src="images/icon-delete.svg" alt="icon-delete" />
+								</div>
+							</div>
+							<button class="btn">Checkout</button>
+						</div>
+					</div>
+				</div>
 				<img src="images/image-avatar.png" alt="Profile" class="profile-pic" />
 			</div>
 			<div class="nav-menu" id="nav-menu">
@@ -46,6 +70,7 @@
 			</div>
 			<div class="overlay" id="overlay"></div>
 		</nav>
+
 		<!-- product section  -->
 		<div class="slider-container">
 			<div class="slider">
@@ -106,7 +131,7 @@
 							<img src="images/icon-plus.svg" alt="" />
 						</button>
 					</div>
-					<button class="add-to-cart">
+					<button class="btn add-to-cart">
 						<i class="fa-solid fa-cart-shopping cart-icon"></i>Add to cart
 					</button>
 				</div>
