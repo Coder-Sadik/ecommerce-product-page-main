@@ -60,7 +60,6 @@ const updateIndex = (n) => {
 
 //for active class in thumbnails
 const thumbnails = document.querySelectorAll(".thumbnail");
-console.log(thumbnails);
 
 thumbnails.forEach((thumbnail, index) => {
 	thumbnail.addEventListener("click", () => {
@@ -72,4 +71,64 @@ thumbnails.forEach((thumbnail, index) => {
 	});
 });
 
-//add to cart functionality 
+//add to cart functionality
+const addToCart = document.getElementById("add-to-cart");
+const currentPrice = document.getElementById("current-price");
+const calculation = document.getElementById("calculation");
+const productList = document.querySelector(".product-list");
+
+const price = parseFloat(currentPrice.innerText.replace("$", ""));
+let currentQuantity = 0;
+let total = 0;
+
+// Hide all product items
+const showEmptyMessage = () => {
+	Array.from(productList.children).forEach((child) => {
+		child.style.display = "none";
+	});
+
+	//add empty message
+	const emptyMessage = document.createElement("p");
+	emptyMessage.className = "empty-message";
+	emptyMessage.textContent = "Your cart is empty";
+	productList.appendChild(emptyMessage);
+};
+
+// Show all product items
+const showProducts = () => {
+	Array.from(productList.children).forEach((child) => {
+		child.style.display = "flex";
+	});
+
+	// Remove the empty message if it exists
+	const emptyMessage = productList.querySelector(".empty-message");
+	if (emptyMessage) {
+		productList.removeChild(emptyMessage);
+	}
+
+	//add price in the calculation class
+	currentQuantity = parseInt(setQuantity.innerText);
+	total = price * currentQuantity;
+	calculation.innerHTML = `
+		$${price} X ${currentQuantity} = <b>$${total}</b>
+		`;
+};
+
+//add to cart button
+addToCart.addEventListener("click", () => {
+	currentQuantity = parseInt(setQuantity.innerText);
+	if (currentQuantity <= 0) {
+		setQuantity.innerText = 1;
+		showProducts();
+	} else {
+		showProducts();
+	}
+});
+
+//click on cart icon functionality
+const cartIcon = document.getElementById("cart");
+const cartContainer = document.querySelector(".cart-icon");
+cartIcon.addEventListener("click", () => {
+	cartContainer.classList.toggle("active");
+});
+showEmptyMessage();

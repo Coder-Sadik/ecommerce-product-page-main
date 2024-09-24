@@ -19,6 +19,9 @@ body {
 	background-color: white;
 	min-height: 100vh;
 }
+.hidden {
+	display: none;
+}
 
 .navbar {
 	display: flex;
@@ -99,8 +102,14 @@ body {
 }
 .product-list .btn {
 	margin-top: 40px;
+	text-align: center;
 }
 
+.empty-message {
+	padding: 80px;
+	text-align: center;
+}
+/* cart section end  */
 .profile-pic {
 	width: 30px;
 	height: 30px;
@@ -317,13 +326,13 @@ body {
 	font-weight: 700;
 	font-size: 1.3rem;
 	white-space: nowrap;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 20px;
 }
 .btn:hover {
 	background-color: var(--Pale-orange);
-}
-
-.btn .cart-icon {
-	margin-right: 10px;
 }
 
 @media screen and (min-width: 768px) {
