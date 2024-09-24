@@ -31,6 +31,7 @@ overlay.addEventListener("click", toggleMenu);
 const setQuantity = document.getElementById("quantity");
 let quantity = 0;
 const quantityControl = (n) => {
+	quantity = parseInt(setQuantity.innerText);
 	quantity += n;
 	quantity >= 0 ? (setQuantity.innerText = quantity) : (quantity = 0);
 };
@@ -76,16 +77,24 @@ const addToCart = document.getElementById("add-to-cart");
 const currentPrice = document.getElementById("current-price");
 const calculation = document.getElementById("calculation");
 const productList = document.querySelector(".product-list");
-
+const notify = document.querySelector(".notify-quantity");
 const price = parseFloat(currentPrice.innerText.replace("$", ""));
 let currentQuantity = 0;
 let total = 0;
+
+//update quantity notification
+const setNotification = (n) => {
+	notify.innerText = n;
+};
 
 // Hide all product items
 const showEmptyMessage = () => {
 	Array.from(productList.children).forEach((child) => {
 		child.style.display = "none";
 	});
+
+	setQuantity.innerText = 0;
+	setNotification(0);
 
 	//add empty message
 	const emptyMessage = document.createElement("p");
@@ -108,10 +117,14 @@ const showProducts = () => {
 
 	//add price in the calculation class
 	currentQuantity = parseInt(setQuantity.innerText);
+	console.log(currentQuantity);
+
 	total = price * currentQuantity;
 	calculation.innerHTML = `
-		$${price} X ${currentQuantity} = <b>$${total}</b>
+		$${price} X ${currentQuantity} = <b>$${total.toFixed(2)}</b>
 		`;
+
+	setNotification(currentQuantity);
 };
 
 //add to cart button
